@@ -1,7 +1,9 @@
 [project]
+authors = [
+    {name = "Hexlet student"}]
 name = "hexlet-code"
 version = "0.1.0"
-description = "Add your description here"
+description = "First project hexlet school"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
