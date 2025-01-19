@@ -33,7 +33,7 @@ def print_question_and_return_answer(min_num, max_num):
     result = first + random_index * step
     progression = [str(i) if i != result else '..' 
                     for i in range(first, first + step * length, step)]
-    print(f'Question: {progression} ')
+    print(f'Question: {' '.join(progression)} ')
 
     return str(result)
 
