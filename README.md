@@ -9,4 +9,8 @@
 [brain-progression  asciinema](https://asciinema.org/a/ei30HDf3gOElFE4IguJa3lc2b)
 [brain-prime  asciinema](https://asciinema.org/a/jOxYxzw7aKiA27D8eAhqWyiLx)
 
+### Setup
 
+```bash
+make package-install
+```
