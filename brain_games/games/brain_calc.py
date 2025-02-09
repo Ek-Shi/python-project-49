@@ -3,23 +3,22 @@
 
 from random import randint
 
-# constant stores the name of the game
+from brain_games.config import MAX_NUMBER, MIN_NUMBER
+
 NAME = 'brain_calc'
 
 
-# print rules to console
 def print_rules():
-    print('What is the result of the expression?') 
+    print('What is the result of the expression?')   
     
     
 # print to console two whole numbers (num) and operation (*, +, -) 
-# num: min_num <= num <= max_num.
+# num: MIN_NUMBER <= num <= MAX_NUMBER.
 # returns the result of equalation
-def print_question_and_return_answer(min_num, max_num):
-    operand1 = randint(min_num, max_num)
-    operand2 = randint(min_num, max_num)
+def print_question_and_return_answer():
+    operand1 = randint(MIN_NUMBER, MAX_NUMBER)
+    operand2 = randint(MIN_NUMBER, MAX_NUMBER)
     operations = {0: '+', 1: '-', 2: '*'}
-    # get random number [0..2] to take operation from operations dictionary
     operation_code = randint(0, 2)
     # pytnon has function eval to calculate expression
     # but I like this old fashioned style

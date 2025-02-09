@@ -16,12 +16,7 @@ from prompt import string
 
 from brain_games.cli import welcome_user
 
-# constant stores the number of times the game will be launch
-GAMES_COUNT = 3
-# constant stores minimum number to show in the game 
-MIN_NUMBER = 10
-# constant stores maximum number to show in the game
-MAX_NUMBER = 99
+GAMES_COUNT = 3 
 
 
 # function launches the game
@@ -37,7 +32,7 @@ def run_the_game(game_name):
     # run the game GAMES_COUNT times
     for i in range(GAMES_COUNT):
         right_answer = \
-            game_module.print_question_and_return_answer(MIN_NUMBER, MAX_NUMBER)
+            game_module.print_question_and_return_answer()
         user_answer = string('Your answer: ')
         if user_answer == right_answer:
             print_if_right_answer()

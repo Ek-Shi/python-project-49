@@ -7,13 +7,7 @@ from random import randint
 from prompt import string
 
 from brain_games.cli import welcome_user
-
-# constant stores the number of times the game will be launch
-GAMES_COUNT = 3
-# constant stores minimum number to show in the game 
-MIN_NUMBER = 10
-# constant stores maximum number to show in the game
-MAX_NUMBER = 99
+from brain_games.config import MAX_NUMBER, MIN_NUMBER
 
 
 # check if answer contains yes expression 
@@ -55,12 +49,10 @@ def print_if_wrong_answer(user_answer, right_answer):
 
 # function launches the game
 def run_brain_even():
-    # print name of the game
     print('brain_even\n')
-    # run gritting function
     name = welcome_user()
     print('Answer "yes" if the number is even, otherwise answer "no".')
-    # run the game GAMES_COUNT times
+    GAMES_COUNT = 3
     for i in range(GAMES_COUNT):
         number = randint(MIN_NUMBER, MAX_NUMBER)
         print(f'Question: {number}')
@@ -71,6 +63,5 @@ def run_brain_even():
             print_if_wrong_answer(answer, opposite_answer(answer))
             print(f'Let\'s try again, {name}!')
             break
-        # if the user got through all the steps, he won
         if i == GAMES_COUNT - 1:
             print(f'Congratulations, {name}!')

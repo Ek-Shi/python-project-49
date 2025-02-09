@@ -3,7 +3,8 @@
 
 from random import randint
 
-# constant stores the name of the game
+from brain_games.config import MAX_NUMBER, MIN_NUMBER
+
 NAME = 'brain_prime'
 
 
@@ -21,10 +22,10 @@ def is_prime(number):
 
 
 # print to console two whole numbers (num) 
-# num: min_num <= num <= max_num.
+# num: MIN_NUMBER <= num <= MAX_NUMBER.
 # returns "yes" if given number is prime. Otherwise returns "no"
-def print_question_and_return_answer(min_num, max_num):
-    operand = randint(min_num, max_num)
+def print_question_and_return_answer():
+    operand = randint(MIN_NUMBER, MAX_NUMBER)
     print(f'Question: {operand}')
     result = 'yes' if is_prime(operand) else 'no'
     return result

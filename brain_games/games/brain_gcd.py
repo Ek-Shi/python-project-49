@@ -2,9 +2,11 @@
 # where user have to find the greatest common divisor of given numbers
 
 from math import gcd
+
 from random import randint
 
-# constant stores the name of the game
+from brain_games.config import MAX_NUMBER, MIN_NUMBER
+
 NAME = 'brain_gcd'
 
 
@@ -14,11 +16,11 @@ def print_rules():
     
     
 # print to console two whole numbers (num) 
-# num: min_num <= num <= max_num.
+# num: MIN_NUMBER <= num <= MAX_NUMBER.
 # returns the greatest common divisor 
-def print_question_and_return_answer(min_num, max_num):
-    operand1 = randint(min_num, max_num)
-    operand2 = randint(min_num, max_num)
+def print_question_and_return_answer():
+    operand1 = randint(MIN_NUMBER, MAX_NUMBER)
+    operand2 = randint(MIN_NUMBER, MAX_NUMBER)
     print(f'Question: {operand1} {operand2} ')
     result = gcd(operand1, operand2)
     return str(result)

@@ -3,15 +3,12 @@
 
 from random import randint
 
-# constant stores the name of the game
+from brain_games.config import MAX_NUMBER, MIN_NUMBER
+
 NAME = 'brain_progression'
-# constant stores minimal step for progression generation
 MIN_STEP = -5
-# constant stores maximal step for progression generation
 MAX_STEP = 5
-# constant stores the minimal numbers amount in the progression
 MIN_LENGTH = 5
-# constant stores the maximal numbers amount  in the progression
 MAX_LENGTH = 10
 
 
@@ -21,10 +18,10 @@ def print_rules():
     
     
 # print to console progression from LENGTH_OF_PROGRESSION numbers
-# num: min_num <= num <= max_num.
+# num: MIN_NUMBER <= num <= MAX_NUMBER.
 # returns the number is missing in the progression 
-def print_question_and_return_answer(min_num, max_num):
-    first = randint(min_num, max_num)
+def print_question_and_return_answer():
+    first = randint(MIN_NUMBER, MAX_NUMBER)
     step = randint(MIN_STEP, MAX_STEP)
     # step can't be 0
     step = MIN_STEP if step == 0 else step
