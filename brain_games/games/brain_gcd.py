@@ -2,7 +2,6 @@
 # where user have to find the greatest common divisor of given numbers
 
 from math import gcd
-
 from random import randint
 
 from brain_games.config import MAX_NUMBER, MIN_NUMBER
