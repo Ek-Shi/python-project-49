@@ -24,8 +24,9 @@ GAMES_COUNT = 3
 # which describes the game the user wants to play
 def run_the_game(game_name):
     game_module = import_game_module(game_name)
+    game_name = game_module.NAME
     # print name of the game
-    print(f'{game_module.NAME}\n')
+    print(f'{game_name}\n')
     # run gritting function
     name = welcome_user()
     game_module.print_rules()
