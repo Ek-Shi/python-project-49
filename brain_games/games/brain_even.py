@@ -4,28 +4,14 @@
 
 from random import randint
 
-from prompt import string
-
-from brain_games.cli import welcome_user
 from brain_games.config import MAX_NUMBER, MIN_NUMBER
 
+NAME = 'brain_even'
 
-# check if answer contains yes expression 
-# if it's the string 'yes'
-# then return True
-# otherwise return False 
-def is_yes(answer):
-    if answer == 'yes':
-        return True
-    return False
-    
 
-# return opposite answer
-# for example if answer = 'yes' function returns 'no'
-def opposite_answer(answer):
-    if is_yes(answer):
-        return 'no'
-    return 'yes'
+# print rules to console
+def print_rules():
+    print('Answer "yes" if the number is even, otherwise answer "no".') 
 
 
 # return True if the number is even, 
@@ -34,34 +20,14 @@ def is_even(number):
     if number % 2 == 0:
         return True
     return False
-    
-    
-# print the message in case user was right    
-def print_if_right_answer():
-    print('Correct!')
 
+  
+# print to console progression from LENGTH_OF_PROGRESSION numbers
+# num: MIN_NUMBER <= num <= MAX_NUMBER.
+# guess if number is even
+def print_question_and_return_answer():
+    operand = randint(MIN_NUMBER, MAX_NUMBER)
+    print(f'Question: {operand}')
+    result = 'yes' if is_even(operand) else 'no'
+    return result
 
-# print the message in case user was wrong    
-def print_if_wrong_answer(user_answer, right_answer):
-    print(f'"{user_answer}" is wrong answer ;(. '
-          f'Correct answer was "{right_answer}".')
-
-
-# function launches the game
-def run_brain_even():
-    print('brain_even\n')
-    name = welcome_user()
-    print('Answer "yes" if the number is even, otherwise answer "no".')
-    GAMES_COUNT = 3
-    for i in range(GAMES_COUNT):
-        number = randint(MIN_NUMBER, MAX_NUMBER)
-        print(f'Question: {number}')
-        answer = string('Your answer: ')
-        if is_yes(answer) == is_even(number) and answer in ('yes', 'no'):
-            print_if_right_answer()
-        else:
-            print_if_wrong_answer(answer, opposite_answer(answer))
-            print(f'Let\'s try again, {name}!')
-            break
-        if i == GAMES_COUNT - 1:
-            print(f'Congratulations, {name}!')

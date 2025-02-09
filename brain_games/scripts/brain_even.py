@@ -1,9 +1,12 @@
-from brain_games.games.brain_even import run_brain_even
+import brain_games.game_runner as game_runner
 
 
 def main():
-    run_brain_even()
+    # start main game module with 
+    # argument is a name of game
+    game_runner.run_the_game('brain_even')
 
 
 if __name__ == "__main__":
     main()
+
