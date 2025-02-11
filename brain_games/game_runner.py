@@ -40,10 +40,9 @@ def run_the_game(game_name):
         else:
             print_if_wrong_answer(user_answer, right_answer)
             print(f'Let\'s try again, {name}!')
-            break
-        # if the user got through all the steps, he won
-        if i == GAMES_COUNT - 1:
-            print(f'Congratulations, {name}!')
+            return
+    # if the user got through all the steps, he won
+    print(f'Congratulations, {name}!')
 
 
 # imports game module dynamically by its name
